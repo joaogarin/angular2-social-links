@@ -4,8 +4,6 @@ A working demo of a social links component in [angular2] using [Webpack]. This d
 
 Demo can be found in the page : http://joaogarin.github.io/angular2-social-links/
 
-[![Everything Is AWESOME](//giphy.com/embed/26tPdFQ8b6c19SSTm)](//giphy.com/embed/26tPdFQ8b6c19SSTm "Everything Is AWESOME")
-
 ## Run the example
 
 ```bash
