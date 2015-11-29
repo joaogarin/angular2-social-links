@@ -4,6 +4,8 @@ A working demo of a social links component in [angular2] using [Webpack]. This d
 
 Demo can be found in the page : http://joaogarin.github.io/angular2-social-links/
 
+<iframe src="//giphy.com/embed/26tPdFQ8b6c19SSTm" width="480" height="300" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/26tPdFQ8b6c19SSTm">via GIPHY</a></p>
+
 ## Run the example
 
 ```bash
