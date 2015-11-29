@@ -22,11 +22,11 @@ var css = require("!css!sass!./css/_buttons.scss");
     styles: [`${css}`],
     // The template for our app
     template: `
-    <div class="social-button">
-        <a class="social-button__circle {{open_state}}" [style.background-color]="share_color">
+    <div class="social-button {{open_state}}">
+        <a class="social-button__circle" [style.background-color]="share_color">
             <i class="fa fa-fw {{share_item_icon}}"></i>
         </a>
-        <span class="social-button--text {{open_state}}" [style.background-color]="share_color">
+        <span class="social-button--text" [style.background-color]="share_color">
             {{share_text}}
         </span>
         <ul class="share-list">

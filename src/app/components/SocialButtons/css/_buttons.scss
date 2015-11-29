@@ -29,21 +29,21 @@
     left: 0;
     top: 10px;
     @include transition_smooth;
+  }
 
-    &.roll {
-      animation-name: rollRight;
+  &.roll .social-button__circle {
+    animation-name: rollRight;
+    animation-duration: 500ms;
+    animation-iteration-count: 1;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+
+    .fa {
+      animation-name: circle;
       animation-duration: 500ms;
       animation-iteration-count: 1;
       animation-timing-function: linear;
       animation-fill-mode: forwards;
-
-      .fa {
-        animation-name: circle;
-        animation-duration: 500ms;
-        animation-iteration-count: 1;
-        animation-timing-function: linear;
-        animation-fill-mode: forwards;
-      }
     }
   }
 
@@ -73,12 +73,12 @@
       right: 0;
       z-index: -1;
     }
+  }
 
-    &.roll {
-      text-align: left;
-      padding-left: 20px;
-      padding-right: 0;
-    }
+  &.roll .social-button--text {
+    text-align: left;
+    padding-left: 20px;
+    padding-right: 0;
   }
 
   &:not(.roll):hover {
@@ -125,7 +125,7 @@
 
       &:hover {
         &:before {
-          background: rgba(0,0,0,0.4);
+          background: rgba(0,0,0,0.3);
           width: 100%;
           height: 100%;
           position: absolute;
