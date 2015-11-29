@@ -9,6 +9,7 @@ var sliceArgs = Function.prototype.call.bind(Array.prototype.slice);
 var toString  = Function.prototype.call.bind(Object.prototype.toString);
 var NODE_ENV  = 'development';
 var pkg = require('./package.json');
+var ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 // Node
 var path = require('path');
@@ -74,7 +75,10 @@ module.exports = {
 
   module: {
     loaders: [
-      { test: /\.css$/,   loader: 'raw' },
+      { test: /\.css$/, loader: ExtractTextPlugin.extract("style-loader", "css-loader") },
+
+      //sass loader implementation
+      {test: /\.scss$/, loaders: ["style", "css", "sass"]},
 
       { test: /\.ts$/,    loader: 'ts',
         query: {
@@ -92,6 +96,11 @@ module.exports = {
           /node_modules/
         ]
       },
+
+      // the url-loader uses DataUrls.
+      // the file-loader emits files.
+      { test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: "url-loader?limit=10000&minetype=application/font-woff" },
+      { test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: "file-loader" }
     ],
     noParse: [
       /rtts_assert\/src\/rtts_assert/,
@@ -100,6 +109,7 @@ module.exports = {
   },
 
   plugins: [
+    new ExtractTextPlugin("styles.css"),
     new CommonsChunkPlugin({
       name: 'angular2',
       minChunks: Infinity,
